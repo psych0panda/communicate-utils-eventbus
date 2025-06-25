@@ -1,0 +1,5 @@
+[ecosystem_events]
+Event = communicate.utils.eventbus.base.Event
+publisher = communicate.utils.eventbus.publisher.AmazonSNSPublisher
+subscriber = communicate.utils.eventbus.subscriber.AmazonSNSSubscriber
+

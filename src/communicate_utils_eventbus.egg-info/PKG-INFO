@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: communicate-utils-eventbus
+Version: 0.0.1a0
+Summary: PyEcosystem EventBus Tools
+Home-page: https://
+Author: TOCM
+Author-email: tocm@spacesheep.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: celery
+Provides-Extra: django3
+Provides-Extra: django4
+Provides-Extra: django
