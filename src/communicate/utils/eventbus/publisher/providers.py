@@ -12,6 +12,7 @@ import abc
 import boto3
 import functools
 import warnings
+import logging
 from communicate.utils.eventbus.hooks import (
     HookRegistry,
     get_default_registry,
@@ -19,6 +20,8 @@ from communicate.utils.eventbus.hooks import (
 from communicate.utils.eventbus.publisher.utils import (
     AmazonMessageExtender,
 )
+
+logging = logging.getLogger(__name__)
 
 
 class Provider(abc.ABC):
@@ -58,7 +61,7 @@ class ProviderAWS(Provider):
             *args,
             secret: str = "test",
             key: str = "test",
-            region: str = "us-west-2",
+            region: str = "us-east-1",
             endpoint: str = None,
             force_key_auth: bool = False,
             **kwargs,
@@ -90,13 +93,15 @@ class ProviderAWS(Provider):
 
         self.conn = session.client(self.resource, **client_kwargs)
 
+        logging.info(f"DEBUG INFO! Connected to {self.resource} with {self.conn}")
+
 
 class ProviderSNS(AmazonMessageExtender, ProviderAWS):
     resource = "sns"
 
     @property
     def arn(self):
-        return f"arn:aws:sns:{self.region}:{self.account_id}:{self.topic}"
+        return "arn:aws:sns:us-east-1:000000000000:events"
 
     def publish(self, event) -> dict:
         return self.conn.publish(

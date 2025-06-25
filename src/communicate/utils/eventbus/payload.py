@@ -18,8 +18,8 @@ class EventConsumedPayload(EventPayload, abc.ABC):
 
 class EventFailPayload(EventPayload):
     code: str
-    data: dict  # {"id": "a92c54b8-8f33-4f55-baed-48112ffd97e9"}
-    detail: str  # "Something went wrong"
+    data: dict
+    detail: str
     origin: str
 
     def get_entity_id(self):

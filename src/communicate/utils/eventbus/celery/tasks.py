@@ -3,14 +3,11 @@ import celery
 import logging
 from abc import ABC
 from billiard.einfo import ExceptionInfo
-from ecosystem.base.exceptions import ApplicationError, EcosystemException
-from ecosystem.base.exceptions.convertor.convertors import (
-    ExceptionConvertor,
-    GenericExceptionConvertor,
-)
-from ecosystem.communication.eventbus import EventPayload
-from ecosystem.communication.eventbus.publisher import AbstractPublisher
-from ecosystem.utils.format import camelize
+from ..exceptions import ApplicationError, EcosystemException
+from ..exceptions import ExceptionConvertor, GenericExceptionConvertor
+from ..payload import EventPayload
+from ..publisher.publishers import AbstractPublisher
+from ...format.case.base import camelize
 from enum import Enum
 from pydantic import ValidationError
 from typing import Optional, Type

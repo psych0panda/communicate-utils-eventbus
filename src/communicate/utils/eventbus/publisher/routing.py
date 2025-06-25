@@ -18,7 +18,9 @@ from communicate.utils.eventbus.publisher.providers import (
     ProviderSNS,
 )
 from typing import MutableMapping, Type
+from logging import getLogger
 
+logger = getLogger(__name__)
 
 class RouteResolve:
     mapping: dict

@@ -21,9 +21,17 @@ def _snake_to_camel(word: str) -> str:
     )
 
 
-def camelize(word: str) -> str:
-    _word = _camel_to_snake(word)
-    return "".join([_snake_to_camel(x) for x in SPLIT_RE.split(_word)])
+def camelize(string: str) -> str:
+    """
+    Convert string to camel case.
+    
+    Example:
+        >>> camelize("hello_world")
+        "HelloWorld"
+        >>> camelize("some_mixed_string")
+        "SomeMixedString"
+    """
+    return "".join(word.capitalize() for word in string.split("_"))
 
 
 def decamelize(word: str) -> str:

@@ -317,18 +317,34 @@ config_builder = ConfigBuilder()
 config_builder.add_environment_variables()
 
 # Workaround for EventBus
-default_topic = config_builder.read_value("eventBus.publisher.default.topic")
-default_provider = config_builder.read_value("eventBus.publisher.default.provider")
+default_topic = "events"
+# default_provider = config_builder.read_value("eventBus.publisher.default.provider")
+default_provider = "ProviderSNS"
 
 # TODO: This should be moved to a separate configuration file or settings file if you use Django
 
 event_bus = {
+    "awsAuth": {
+        "key": "000000000000",
+        "secret": config_builder.read_value("eventBus.publisher.default.secret"),
+        "region": "us-east-1",
+        "profiles": {
+            "default": {
+                "accountId": "000000000000",
+                "force_key_auth": True,
+                "secret": config_builder.read_value("eventBus.publisher.default.secret"),
+                "key": "000000000000",
+                "region": "us-east-1",
+                "endpoint": "http://localhost.localstack.cloud:4566"
+            }
+        }
+    },
     "eventBus": {
         "publisher": {
             "targets": {
                 "allEventsTarget": {
                     "route": "*",
-                    "provider": "NullProvider",
+                    "provider": "sns",
                     "wraps": {"topic": default_topic, "provider": default_provider},
                 }
             }

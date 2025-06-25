@@ -5,6 +5,7 @@ setup.py
 src/communicate/utils/eventbus/__init__.py
 src/communicate/utils/eventbus/attribute.py
 src/communicate/utils/eventbus/base.py
+src/communicate/utils/eventbus/configuration.py
 src/communicate/utils/eventbus/exceptions.py
 src/communicate/utils/eventbus/hooks.py
 src/communicate/utils/eventbus/payload.py
@@ -32,3 +33,4 @@ src/communicate_utils_eventbus.egg-info/dependency_links.txt
 src/communicate_utils_eventbus.egg-info/entry_points.txt
 src/communicate_utils_eventbus.egg-info/requires.txt
 src/communicate_utils_eventbus.egg-info/top_level.txt
+tests/test_feature.py

@@ -70,8 +70,8 @@ class Payload(BaseModel, abc.ABC):
 
     @classmethod
     def get_entity_name(cls):
-        name = decamelize(cls.__name__)
-        name = str(name).split("_", maxsplit=1)[0]
+        name = cls.__name__
+        name = str(name).split("Payload")[0]
         return name
 
     def get_entity_id(self):
