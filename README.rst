@@ -1,13 +1,8 @@
 communicate-utils-eventbus
 ===========================
 
-.. image:: https://github.com/spacesheap/communicate-utils-eventbus/workflows/Tests/badge.svg
-   :target: https://github.com/spacesheap/communicate-utils-eventbus/actions
-   :alt: Tests Status
-
-.. image:: https://codecov.io/gh/spacesheap/communicate-utils-eventbus/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/spacesheap/communicate-utils-eventbus
-   :alt: Code Coverage
+.. image:: https://codecov.io/gh/psych0panda/communicate-utils-eventbus/branch/master/graph/badge.svg?token=VKMSLEF4IN 
+ :target: https://codecov.io/gh/psych0panda/communicate-utils-eventbus
 
 communicate-utils-eventbus is a utility library for event-driven communication between different parts of your application.
 
