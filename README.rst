@@ -21,9 +21,13 @@ Installation
 
 You can install with dev-mode:
 
-```bash
-python -e path_to_project communicate-utils-eventbus
-```
+.. code-block:: bash
+    python -e path_to_project communicate-utils-eventbus
+
+or use slug:
+
+.. code-block:: bash
+    python -e install ["dev"]
 
 Usage Example (Django)
 ----------------------

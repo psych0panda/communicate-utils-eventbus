@@ -335,7 +335,7 @@ event_bus = {
                 "secret": config_builder.read_value("eventBus.publisher.default.secret"),
                 "key": "000000000000",
                 "region": "us-east-1",
-                "endpoint": "http://localhost.localstack.cloud:4566"
+                "endpoint": "http://localhost:4566"
             }
         }
     },

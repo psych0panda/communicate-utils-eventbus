@@ -39,7 +39,7 @@ class AbstractPublisher(abc.ABC):
 
 
 class AmazonSNSPublisher(AmazonMessageExtender):
-    _default_region = "us-east-2"
+    _default_region = "us-east-1"
 
     def _load_config(self, conf: any = None):
         if conf:
@@ -60,7 +60,7 @@ class AmazonSNSPublisher(AmazonMessageExtender):
         )
         client_kwargs = {
             "use_ssl": True,
-            "endpoint_url": self.config.get("endpoint"),
+            "endpoint_url": self.config.get("endpoint_url") or self.config.get("endpoint", "http://localhost:4566"),
         }
 
         config = Config(**self.config.pop("aws", {}))
